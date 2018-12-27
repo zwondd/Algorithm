@@ -1,13 +1,11 @@
+/*
+  백준 1149번: RGB거리 
+*/
 #include <stdio.h>
 
-#define R 0
-#define G 1
-#define B 2
-
 int rgbAry[1001][3];
-int rgbUsed[1001];
+int rgbUsed[1001]={-1,};
 int minCost=1000000;
-int costs[4];
 int N;
 
 
@@ -23,31 +21,28 @@ int main()
 	}
 
 	getMinCost(1, 0);
-	printf("***********minCost: %d\n", minCost);
+	printf("%d\n",minCost);
 }
 
 void getMinCost(int n, int cost)
 {
 	int i=0;
-	printf(" n: %d, cost: %d\n", n, cost);
 	if(n==N+1)
 	{
 		minCost = (cost<minCost)? cost : minCost;
-		printf("compare -> minCost: %d\n", minCost);
 		return;
-		//		getMinCost(n-1, minCost);
 	}
 	else
 	{
 		for(i=0; i<3; i++)
 		{
-			if(n==1 || n==N || (rgbUsed[n-1]!=i && rgbUsed[n]!= rgbUsed[n-1]))
+			if(rgbUsed[n-1]!=i)
 			{
-				int j=0;
 				cost+=rgbAry[n][i];
-				rgbUsed[i] = i;
+				rgbUsed[n] = i;
 				getMinCost(n+1, cost);
-				cost-rgbAry[n][i];
+				cost-=rgbAry[n][i];
+				rgbUsed[n] = -1;
 			}
 		}
 
