@@ -11,7 +11,16 @@ var test = function(){
 
 	for(i=0; i<10 ; i++)
 	{
-		console.log("i= "+i);
+		if(i%2 == 0){
+
+			console.log("i= "+i);
+		}else{
+			console.log("odd");
+			console.log("odd");
+			console.log("odd");
+			console.log("odd");
+		}
 	}
+
 
 }
