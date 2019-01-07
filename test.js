@@ -9,6 +9,7 @@ var test = function(){
 	var i = 0;
 
 
+	if(i==0){
 	for(i=0; i<10 ; i++)
 	{
 		if(i%2 == 0){
@@ -20,6 +21,9 @@ var test = function(){
 			console.log("odd");
 			console.log("odd");
 		}
+	}
+	}else{
+		console.loge("i!=0");
 	}
 
 
