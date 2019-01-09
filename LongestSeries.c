@@ -8,12 +8,38 @@
 #include <string.h>
 
 int ary[1001];
+int distArr[1001];
 int N;
+int maxDist;
 
+void findLongestSeries(){
+	int i;
+	int j;
+
+	for(i=1; i<=N; i++)
+	{
+		int dist=0;
+		for(j=0; j<i; j++)
+		{
+			if(ary[i]>ary[j] && distArr[j]>dist){
+				dist=distArr[j];	
+			}
+		}
+		distArr[i] = dist+1;
+	}
+
+	for(i=1; i<=N; i++)
+	{
+		if(maxDist<distArr[i])
+		{
+			maxDist=distArr[i];
+		}
+	}
+}
 
 int main()
 {
-	int i=0;
+	int i=1;
 	char str[10000];
 	char * res;
 
@@ -29,8 +55,9 @@ int main()
 	{
 		ary[i++] = atoi(res);
 		res = strtok(NULL," ");
-		printf("%d : %d\n", i, ary[i]);
 	}
 
+	findLongestSeries();
+	printf("%d",maxDist);
 }
 
