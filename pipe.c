@@ -57,7 +57,7 @@ void solve( int x, int y )
 		int new_y = y + dir_y[i];
 
 		
-		if ( new_x<0 || new_x>=N || new_y<0 || new_y>=N || check[new_x][new_y]==1 || map[new_x][new_y]==0 )
+		if ( new_x<0 || new_x>=N || new_y<0 || new_y>=N || check[new_x][new_y]==1 )
 		{
 			continue;
 		}
@@ -87,15 +87,7 @@ int main(void){
 		}
 	}
 	
-	for ( i=0; i<N; i++ )
-	{
-		for (j=0; j<N; j++ )
-		{
-			if ( check[i][j] == 0 )
-				solve(X,Y);	
-		}
-		
-	}
+	solve(Y,X); // 문제에서 X가로, Y세로
 	ans = total_pipe_cnt;
 	
 	
