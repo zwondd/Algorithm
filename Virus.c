@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// 19.05.24
 // 백준 2506번 : 바이러스
 
 int computer_count;
