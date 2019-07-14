@@ -1,7 +1,7 @@
 /*
     19.07.14
     LG codpro - 유클리드 호제법
-    - 재귀
+    - 모범답안
  */
 #include <iostream>
 
@@ -12,21 +12,7 @@ int GCD(int m, int n);
 // 작성해야 할 함수
 int GCD(int m, int n)
 {
-    if ( n==0 ) 
-        return m;
-
-    if ( m%n == 0 )
-        return n;
-
-    if ( m==0 && n!=0 )
-        return m;
-    else if ( m!=0 && n==0 )
-        return n;
-
-    int temp = m%n;
-    m = n;
-    n= temp;
-    return GCD(m,n);
+    return n ? GCD(n,m%n) : m;
 }
 
 int main(void)
