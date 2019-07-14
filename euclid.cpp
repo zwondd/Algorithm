@@ -1,7 +1,7 @@
 /*
     19.07.14
     LG codpro - 유클리드 호제법
-    - while문 사용
+    - 재귀
  */
 #include <iostream>
 
@@ -15,23 +15,18 @@ int GCD(int m, int n)
     if ( n==0 ) 
         return m;
 
-    while( m!=0 && n!=0 ) {
-        if ( m%n == 0 ) {
-            return n;
-        } else {
-            int temp = m%n;
-            m = n;
-            n = temp;
-        }
-    }
-
-    if ( m==0 && n!=0 ) {
+    if ( m%n == 0 )
         return n;
-    } else if ( m!=0 && n==0 ) {
-        return m;
-    }
 
-	return 0;
+    if ( m==0 && n!=0 )
+        return m;
+    else if ( m!=0 && n==0 )
+        return n;
+
+    int temp = m%n;
+    m = n;
+    n= temp;
+    return GCD(m,n);
 }
 
 int main(void)
