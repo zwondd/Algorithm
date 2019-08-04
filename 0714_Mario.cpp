@@ -1,6 +1,6 @@
 /*
     19.07.14
-    LG codpro - 마리오게임
+    LG codepro - 마리오게임
  */
 
 #include <iostream>

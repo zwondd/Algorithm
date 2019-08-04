@@ -1,6 +1,6 @@
 /*
     19.07.14
-    LG codpro - 유클리드 호제법
+    LG codepro - 유클리드 호제법
     - 모범답안
  */
 #include <iostream>

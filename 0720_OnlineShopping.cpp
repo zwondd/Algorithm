@@ -1,6 +1,6 @@
 /*
     19.07.20
-    LG codpro - 인터넷 쇼핑물 제품 배치
+    LG codepro - 인터넷 쇼핑물 제품 배치
  */
 
 #include <iostream>

@@ -1,6 +1,6 @@
 /*
     19.07.20
-    LG codpro - 데이터 리오더링
+    LG codepro - 데이터 리오더링
  */
 
 #include <iostream>
