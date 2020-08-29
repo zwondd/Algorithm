@@ -2,6 +2,10 @@
     200823
     LG codepro - [20년도_2차] 무인열차
 	my solution 
+	9/10 : 1개 fail
+
+	=> 10/10 : success 
+	(bfs를 돌며 해당 index의 배열까지 가는데 드는 최소값 업데이트 할 때 해당 값 변경 했더니 success 됨.)
  */
 #include <iostream>
 #include <cstring>
@@ -30,21 +34,6 @@ void InputData(void){
 	}
 }
 
-void dfs(int x, int y, int factory) {
-	map[x][y] = factory;
-
-	for(int i=0; i<4; i++) {
-		int nx = x + dx[i];
-		int ny = y + dy[i];
-
-		if ( map[nx][ny] == factory )
-			continue;
-		if ( map[nx][ny] == 1 ) 
-			dfs(nx,ny,factory);
-	}
-	return;
-}
-
 void bfs() {
 
 	while( !q.empty() ) {
@@ -65,22 +54,24 @@ void bfs() {
 			} 
 			
 			if ( map[nx][ny] == -2 ) {
-				if ( minRail > map[curx][cury] + 1 ) {
-					minRail = map[curx][cury] + 1;
+				if ( minRail > map[curx][cury]  ) {
+					minRail = map[curx][cury] ;
 				}
 				continue;
-
-				// fail
-				// minRail = map[curx][cury] + 1;
-				// return;
 			} 
 
 			if ( map[nx][ny] != 0 && (map[nx][ny] <= map[curx][cury] + 1) ) { 
-				// "<=" added equal conditino when comparing 
+				// "<=" added equal condition when comparing 
 				continue;
 			}
-
-			map[nx][ny] = map[curx][cury] + 1;
+			
+			if ( map[curx][cury] == -1 )
+				map[nx][ny] = map[curx][cury] + 2;
+			else
+				map[nx][ny] = map[curx][cury] + 1;
+			
+			// printf("curx : %d, cury: %d , map : %d \n", curx, cury, map[curx][cury]);
+			// printf("nx : %d, ny: %d , map : %d \n", nx, ny, map[nx][ny]);
 
 			q.push(nx);
 			q.push(ny);
@@ -101,7 +92,7 @@ void solve() {
 						cntL++;
 				}
 				if ( cntL <4 ) {
-					printf("pushed (%d,%d) \n", i,j);
+					// printf("pushed (%d,%d) \n", i,j);
 					q.push(i);
 					q.push(j);
 				}
@@ -112,6 +103,20 @@ void solve() {
 	bfs();
 }
 
+void dfs(int x, int y, int factory) {
+	map[x][y] = factory;
+
+	for(int i=0; i<4; i++) {
+		int nx = x + dx[i];
+		int ny = y + dy[i];
+
+		if ( map[nx][ny] == factory )
+			continue;
+		if ( map[nx][ny] == 1 ) 
+			dfs(nx,ny,factory);
+	}
+	return;
+}
 
 int main(void){
 	int ans = -1;
@@ -121,14 +126,16 @@ int main(void){
 	for(int i=1; i<=N; i++) {
 		for(int j=1; j<=M; j++) {
 			if ( map[i][j] == 1 ) {
-				dfs(i,j,factory--);
+				dfs(i,j,factory);
+				factory--;
 			} 
 		}
 	}
+	// printf("\n\n");
 
-	// for(int i=0; i<N; i++) {
-	// 	for(int j=0; j<M; j++) {
-	// 		printf(" %d ", map[i][j]);
+	// for(int i=1; i<=N; i++) {
+	// 	for(int j=1; j<=M; j++) {
+	// 		printf("%d ", map[i][j]);
 	// 	}
 	// 	printf("\n");
 	// }
