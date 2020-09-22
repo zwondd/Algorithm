@@ -26,7 +26,7 @@ int main(){
 	InputData();//	입력 함수
 
 	int i, j, cnt=0;
-	int h
+	int h;
 	for(i=0; i<N; i++) {
 		cnt++;
 
