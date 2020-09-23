@@ -33,9 +33,32 @@ public:
 };
 
 // Solution_2 Two Pass Hash Table
-/*
-    to-be continued
-*/
+#include <unordered_map>
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        /*
+            2. 해쉬맵 사용
+            - 루프를 돌면서 key에 요소를 저장
+        */
+       unordered_map<int, int> myMap;
+        vector<int> ret;
+        
+        size_t numSize = nums.size();
+        for(size_t i=0; i!=numSize; ++i) {
+            int val = target-nums[i];
+            if ( myMap.find(val) != myMap.end() ) {
+                ret.push_back(i);
+                ret.push_back( myMap[val] );
+                return ret;
+            } else {
+                myMap[nums[i]] = i;
+            }
+        }
+    }
+};
+
+
 
 
 
