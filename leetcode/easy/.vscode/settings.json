@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "list": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp",
+        "xutility": "cpp"
+    }
+}

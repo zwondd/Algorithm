@@ -4,6 +4,7 @@
         "limits": "cpp",
         "vector": "cpp",
         "xutility": "cpp",
-        "xlocale": "cpp"
+        "xlocale": "cpp",
+        "ostream": "cpp"
     }
 }
