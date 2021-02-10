@@ -33,8 +33,7 @@ int getMin(int s, int e) {
 int main(void) {
     cin>>N;
     for(int i=1; i<=N; i++) {
-        cin>>matrix[i][0];
-        cin>>matrix[i][1];
+        cin>>matrix[i][0]>>matrix[i][1];
     }
     memset(dp, -1, sizeof(dp));
     cout<<getMin(1,N)<<endl;
