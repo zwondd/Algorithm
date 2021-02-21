@@ -1,4 +1,4 @@
-package bakejoon;
+package baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,7 +35,6 @@ public class boj_9252_LCS {
 			in.close();
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
