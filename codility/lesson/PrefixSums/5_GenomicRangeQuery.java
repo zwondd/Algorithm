@@ -2,7 +2,7 @@
  * 21-02-21
  * 5_PrefixSums_GenomicRangeQuery
  */ 
-package codility.lesson.PrefixSums.GenomicRangeQuery;
+package codility.lesson.PrefixSums;
 
 class GenomicRangeQuery {
 
