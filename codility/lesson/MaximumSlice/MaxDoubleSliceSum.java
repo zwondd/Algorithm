@@ -59,16 +59,19 @@ public class MaxDoubleSliceSum {
     //        3) y=4-> rightMax[5] = 0 (z=5)     
     //
     // 참고) https://hwan-shell.tistory.com/124
+    // https://app.codility.com/demo/results/trainingMHFJVQ-B2J/
     public int solution(int[] A) {
         int result=0;
 
         int[] leftSum=new int[A.length+1];
         int[] rightSum=new int[A.length+1];
 
+        if ( A.length<4 ) return 0;
+
         for(int i=1; i<A.length-1; i++) {
             leftSum[i]=Math.max(leftSum[i-1]+A[i], 0);
         }
-        for(int i=A.length-2; i>1; i--) {
+        for(int i=A.length-1; i>1; i--) {
             rightSum[i-1]=Math.max(rightSum[i]+A[i-1], 0);
         }
 
