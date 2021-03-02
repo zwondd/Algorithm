@@ -4,7 +4,7 @@
  */
 package codility.lesson.PrimeAndCompositeNumbers;
 
-public class Peeks {
+class Peeks {
     // My Solution 1 (36%) 
     // wrong answer
     // https://app.codility.com/demo/results/training7FYXVE-HVU/

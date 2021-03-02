@@ -7,7 +7,7 @@ package codility.lesson.StackQueue;
 
 import java.util.*;
 
-public class Fish {
+class Fish {
     // My Solution 1 36min (37%) 
     // wrong answer, timeout error
     // 아예 문제 이해를 잘 못 하고 품

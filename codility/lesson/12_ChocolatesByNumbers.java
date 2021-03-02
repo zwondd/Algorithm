@@ -6,7 +6,7 @@ package codility.lesson._12_Euclidean;
 
 import java.util.*;
 
-public class ChocolatesByNumbers {
+class ChocolatesByNumbers {
 
     public int solution1(int N, int M) {
         int[] emptyWrappers=new int[N];

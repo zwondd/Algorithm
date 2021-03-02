@@ -6,7 +6,7 @@ package codility.lesson.SieveOfEratosthenes;
 
 import java.util.*;
 
-public class CountSemiprimes {
+class CountSemiprimes {
     // My Solution 1 (34min) (11%) 
     // wrong answer, runtime error, timeout error
     // Result ) https://app.codility.com/demo/results/trainingGJWGMG-AN9/ 

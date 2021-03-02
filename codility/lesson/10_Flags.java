@@ -6,7 +6,7 @@ package codility.lesson.PrimeAndCompositeNumbers;
 
 import java.util.*;
 
-public class Flags {
+class Flags {
     // My Solution 1 (80%) O(N)
     // wrong answer
     // https://app.codility.com/demo/results/trainingBVC48N-YHV/

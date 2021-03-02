@@ -5,7 +5,7 @@
 
 package codility.lesson.PrimeAndCompositeNumbers;
 
-public class CountFactors {
+class CountFactors {
     // My Solution 1 (71%) O(N)
     // timeout error
     public int solution1(int N) {

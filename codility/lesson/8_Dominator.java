@@ -2,11 +2,11 @@
  * 21-02-24 
  * 8_Leader_Dominator
  */
-package codility.lesson.Leader;
+package codility.lesson._8_Leader;
 
 import java.util.*;
 
-public class Dominator {
+class Dominator {
     // My Solution 1 (91%) O(N*log(N)) or O(N)
     // fix1) (100%) O(N*log(N)) or O(N)
     public int solution1(int[] A) {

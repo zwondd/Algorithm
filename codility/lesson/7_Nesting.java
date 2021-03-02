@@ -6,7 +6,7 @@ package codility.lesson.StackQueue;
 
 import java.util.*;
 
-public class Nesting {
+class Nesting {
 
     // My Solution 1 11min (100%) O(N)
     public int solution(String S) {

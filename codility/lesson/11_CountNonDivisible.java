@@ -4,7 +4,7 @@
  */
 package codility.lesson.SieveOfEratosthenes;
 
-public class CountNonDivisible {
+class CountNonDivisible {
     // My Solution 1 (55%) 
     // timeout error
     // Result ) https://app.codility.com/demo/results/trainingWCDARB-M3K/

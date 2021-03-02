@@ -2,11 +2,11 @@
  * 21-03-02
  * 12_Euclidean_CommonPrimeDivisors
  */
-package codility.lesson._12_Euclidean;
+package codility.lesson;
 
 import java.util.*;
 
-public class CommonPrimeDivisors 
+class CommonPrimeDivisors 
 {
     // My Solution 1 (71min) (23%) 
     // wrong answer, runtime error, timeout error
@@ -122,4 +122,5 @@ public class CommonPrimeDivisors
         // int[] a3={7, 61, 88, 121};
         // int[] b3={14, 2, 5, 11};
         // System.out.println(c.solution(a3, b3));
-    }}
+    }
+}

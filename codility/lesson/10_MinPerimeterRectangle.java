@@ -4,7 +4,7 @@
  */
 package codility.lesson.PrimeAndCompositeNumbers;
 
-public class MinPerimeterRectangle {
+class MinPerimeterRectangle {
     // My Solution 1 (100%) O(sqrt(N))
     // https://app.codility.com/demo/results/trainingCCPVBU-QV3/
     public int solution(int N) {

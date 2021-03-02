@@ -5,7 +5,7 @@
 package codility.lesson.StackQueue;
 import java.util.Stack;
 
-public class StoneWall {
+class StoneWall {
 
     // My Solution 1 (100%) O(n) 
     // 다른 풀이 참고 

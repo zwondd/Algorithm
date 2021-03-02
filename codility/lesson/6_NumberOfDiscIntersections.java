@@ -6,7 +6,7 @@ package codility.lesson.Sorting;
 
 import java.util.Arrays;
 
-public class NumberOfDiscIntersections {
+class NumberOfDiscIntersections {
    
     // My Solution 1 26min (6%)
     // wrong answer, timeout error

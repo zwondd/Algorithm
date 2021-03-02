@@ -2,11 +2,11 @@
  * 21-02-24
  * 9_MaximumSlice_MaxDoubleSliceSum
  */
-package codility.lesson.MaximumSlice;
+package codility.lesson._9_MaximumSlice;
 
 import java.util.Arrays;
 
-public class MaxDoubleSliceSum {
+class MaxDoubleSliceSum {
     int[][] dp;
     int maxSum=-1;
 

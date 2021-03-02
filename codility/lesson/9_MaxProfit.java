@@ -2,9 +2,9 @@
  * 21-02-25
  * 9_MaximumSlice_MaxProfit
  */
-package codility.lesson.MaximumSlice;
+package codility.lesson._9_MaximumSlice;
 
-public class MaxProfit {
+class MaxProfit {
     // My Solution 1 (66%) O(N**2)
     // timeout error
     public int solution1(int[] A) {

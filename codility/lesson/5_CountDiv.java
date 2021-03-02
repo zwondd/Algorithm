@@ -2,7 +2,7 @@
  * 21-02-21
  * 5_PrefixSums_CountDiv
  */ 
-package codility.lesson.PrefixSums;
+package codility.lesson;
 
 class CountDiv {
     public static void main(String[] args) {
@@ -15,4 +15,5 @@ class CountDiv {
 
         return (B/K + (A%K==0?1:0)) - (A/K);
     }
+    
 }

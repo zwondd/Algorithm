@@ -7,7 +7,7 @@ package codility.lesson.Sorting;
 
 import java.util.Arrays;
 
-public class Triagnel {
+class Triagnel {
     // My Solution 1 21min (68%) O(N**3)
     // wrong answer, timeout error
     public int solution1(int[] A) {
