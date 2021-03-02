@@ -2,7 +2,7 @@
  * 21-02-28
  * 12_Euclidean_ChocolatesByNumbers
  */
-package codility.lesson.Euclidean;
+package codility.lesson._12_Euclidean;
 
 import java.util.*;
 
