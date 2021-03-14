@@ -24,7 +24,7 @@ CAAE32
 class Calculator {
 	char[] toChr="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
-	public int toNum (char ch) {
+	public int toNum (char num) {
 		int i=0;
 		for(i=0; i<toChr.length; i++) {
 			if ( toChr[i] == num ) {
