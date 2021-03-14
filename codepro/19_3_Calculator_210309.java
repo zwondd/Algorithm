@@ -1,8 +1,10 @@
+/*
+    210314
+    LG codepro - [19년도_3차] 계산기
+ */
 package codepro;
 
 import java.io.*;
-import java.util.Arrays;
-
 /*
 
 5
@@ -18,27 +20,30 @@ CAAE32
 3172218
 0
 
-
 */
 class Calculator {
-	
-	public static void solve(String testCase) {
-		char[] toChr="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-		
+	char[] toChr="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+
+	public int toNum (char ch) {
+		int i=0;
+		for(i=0; i<toChr.length; i++) {
+			if ( toChr[i] == num ) {
+				break;
+			}
+		}
+		return i;
+	}
+
+	public void solve(String testCase) {
 		int B = Integer.parseInt(testCase.split(" ")[0]);
 		char[] S = testCase.split(" ")[1].toCharArray();
 		char[] D = testCase.split(" ")[2].toCharArray();
-		System.out.println(" B : " + B);
-		System.out.println(" S : " + String.valueOf(S) );
-		System.out.println(" D : " + String.valueOf(D) );
 
-		int mulArr[] = new int[S.length+D.length+1];
-		Arrays.fill(mulArr, 0);
-
+		// Arrays.fill(mulArr, 0);
 		int sPos=0;
 		int dPos=0;
 		int minus=1;
-
+		
 		if ( S[0]== '-' ) {
 			minus*=(-1);
 			sPos++;
@@ -51,53 +56,53 @@ class Calculator {
 			System.out.println(0);
 			return;
 		}
-
+		
+		// problem ) S, D 배열의 수들이 - 부호에 의해 자릿수가 안맞게 됨.
+		// ex) -123 / 345 일 때 1과3은 같은 자릿수 이지만 배열을 재정렬하지 않고 
+		//      계산하게 되면 1과 3은 각각 1번째, 0번째로 다른 자릿수로 인식하게 됨.
+		int mulArr[] = new int[S.length-sPos+D.length-1];
 		for(int i=S.length-1; i>=sPos; i--) {
 			for(int j=D.length-1; j>=dPos; j--) {
-				// System.out.println(S[i]);
-				// System.out.println(D[j]);
-
-				mulArr[i+j]+= (S[i]-'0')*(D[j]-'0');
-				// System.out.println( (i+j) + " : " + mulArr[i+j]);
+				mulArr[i+j]+= (toNum(S[i]))*(toNum(D[j]));
 			}
 		}
 
-		for(int i=mulArr.length-1; i>sPos+dPos; i--) {
+		// for(int i=mulArr.length-1; i>sPos+dPos; i--) {
+		for(int i=mulArr.length-1; i>0; i--) {
 			if ( mulArr[i]>=B ) {
 				mulArr[i-1]+=mulArr[i]/B;
 				mulArr[i]%=B;
 			}
 		}
-		// System.out.println(" mulArr : " + Arrays.toString(mulArr) );
 
 		int first = 0;
-		if ( mulArr[sPos+dPos]>=B ) {
-			first=mulArr[sPos+dPos]/B;
-			mulArr[sPos+dPos]%=B;
+		// if ( mulArr[sPos+dPos]>=B ) {
+		if ( mulArr[0]>=B ) {
+			first=mulArr[0]/B;
+			mulArr[0]%=B;
 		}
 
 		String result="";
 		if ( minus<0 ) result+="-";
 		if ( first>0 ) result+=toChr[first];
 
-		int pos=sPos+dPos;
-		while(  pos<mulArr.length && toChr[mulArr[pos]] != 0 ) {
+		// int pos=sPos+dPos;
+		int pos=0;
+		while(  pos<mulArr.length && mulArr[pos] != 0 ) {
 			result+= toChr[mulArr[pos++]];
 		}
-		// for(int i=sPos+dPos; i<mulArr.length; i++) {
-		// 	result+= toChr[mulArr[i]];
-		// }
 
 		System.out.println(result);
 	}
 	
 	public static void main(String[] args) throws Exception {
+		Calculator c=new Calculator();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
 
 		for(int i=0; i<Integer.parseInt(input); i++) {
             String testCase=br.readLine();
-            solve(testCase);
+            c.solve(testCase);
         }
 	}
 }
