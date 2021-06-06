@@ -60,5 +60,25 @@ class FibFrog {
         }
     }
 
+    public static void main(String [] args) {
+        int[] A = {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0};
+        int[] t1 = {};
+        int[] t2 = {0,0,0};
+        int[] t3 = {1,1,1};
+
+
+
+        FibFrog s = new FibFrog();
+        int res = s.solution(A);
+        System.out.println(res);
+
+        System.out.println(s.solution(t1));
+        System.out.println(s.solution(t2));
+        System.out.println(s.solution(t3));
+
+
+
+    }
+
     
 }
