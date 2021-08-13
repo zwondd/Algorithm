@@ -8,6 +8,47 @@ import java.util.*;
 //      [ 5 , -6 , *, 5]     => (x)  - 현재 이렇게 구현되어 있음
 
 class AddParentheses {
+    // solution 
+    // dfs 로 풀이 시 중복 문제 발생
+    // 분할정복으로 풀이
+    public List<Integer> diffWaysToCompute(String expression) {
+        List<Integer> res = new ArrayList<>();
+        if ( expression == null || expression.length() == 0 ) {
+            return res;
+        }
+
+        for(int i=0; i<expression.length(); i++) {
+            char chr = expression.charAt(i);
+
+            if ( chr == '+' || chr == '-' || chr == '*' ) {
+                String part1 = expression.substring(0, i);
+                String part2 = expression.substring(i+1);
+
+                List<Integer> part1Res = diffWaysToCompute(part1);
+                List<Integer> part2Res = diffWaysToCompute(part2);
+
+                for(Integer p1: part1Res) {
+                    for(Integer p2 : part2Res) {
+                        if ( chr == '+' ) {
+                            res.add(p1+p2);
+                        } else if ( chr == '-' ) {
+                            res.add(p1-p2);
+                        } else {
+                            res.add(p1*p2);
+                        }
+                    }
+                }
+            }
+        }
+
+        if ( res.size() == 0 ) {
+            res.add(Integer.valueOf(expression));
+        }
+
+        return res;
+    }
+
+    ///
     List<Integer> list = new ArrayList<>();
 
     public int operate ( int idx, List<String> l ) {
@@ -54,7 +95,7 @@ class AddParentheses {
         }
     }
 
-    public List<Integer> diffWaysToCompute(String expression) {
+    public List<Integer> diffWaysToCompute1(String expression) {
         String[] arr = expression.split("");
         List<String> arrAsList = Arrays.asList(arr);
         dfs(arrAsList);
