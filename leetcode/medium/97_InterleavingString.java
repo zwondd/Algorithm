@@ -5,6 +5,9 @@
     solution by dp
     dp[i][j] = i characters before S1, j characters before S2 can be spliced into S3(i+j) characters
 
+     Runtime: 7 ms, faster than 24.82% of Java online submissions for Interleaving String.
+    Memory Usage: 38.7 MB, less than 26.94% of Java online submissions for Interleaving String.
+
 */
 
 class InterleavingString {
