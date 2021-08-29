@@ -1,12 +1,9 @@
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 /*
     2021-08-27
     [Leetcode][Medium] 5. Longest Palindromic Substring
 
     solution ) dp
     ref. https://izmirprogramming.tistory.com/12
-
 */
 class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
