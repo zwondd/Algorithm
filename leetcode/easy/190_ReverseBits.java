@@ -1,6 +1,6 @@
 /*
     2021-08-31
-    [Leetcode][Medium] 190. Reverse Bits
+    [Leetcode][Easy] 190. Reverse Bits
 
 */
 class ReverseBits {

@@ -1,3 +1,4 @@
+package codepro.solution;
 import java.util.Scanner;
 
 class PACKET{
@@ -6,7 +7,7 @@ class PACKET{
 	PACKET next;
 }
 
-public class Main {
+class Buffer {
 
 	PACKET buffer;
 	Scanner sc;
@@ -39,7 +40,7 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		Main m = new Main();
+		Buffer m = new Buffer();
 
 		m.buffer = new PACKET();
 		m.sc = new Scanner(System.in);
