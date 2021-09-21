@@ -1,7 +1,6 @@
 /*
     2021-09-20
     [Leetcode][Easy] 953. Verifying an Alien Dictionary
-    DP
 */
 class AlienDictionary {
     /*
