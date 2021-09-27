@@ -9,6 +9,8 @@ import org.graalvm.compiler.nodes.java.NewMultiArrayNode;
 
 /*
    https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/310-minimum-height-trees.html
+   https://velog.io/@pyh8618/LeetCode-310.-Minimum-Height-Trees
+   최소 높이를 구하기 위해 루트를 선택하는 것이 아닌 리프 노드 부터 삭제 해나가면 남아있는 노드를 통해 루트 노드를 구할 수 있다.
 */
 class MinimumHeightTrees3 {
     
