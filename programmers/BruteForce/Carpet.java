@@ -1,6 +1,6 @@
 /*
     2021-10-14
-    [Programmers][Graph][Lv2] 카펫
+    [Programmers][BruteForce][Lv2] 카펫
 */
 package BruteForce;
 
