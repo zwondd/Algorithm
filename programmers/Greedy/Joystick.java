@@ -30,6 +30,7 @@ public class Joystick {
             }
             min = Math.min(min, (i*2)+len-nextIndex);
         }
+        answer += min;
 
         return answer;
     }
