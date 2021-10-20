@@ -1,6 +1,6 @@
 /*
     2021-10-15
-    [Programmers][Graph][Lv2] 단어변환
+    [Programmers][DfsBfs][Lv2] 단어변환
 */
 package DfsBfs;
 

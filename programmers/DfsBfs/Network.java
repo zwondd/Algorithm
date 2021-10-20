@@ -1,6 +1,6 @@
 /*
     2021-10-15
-    [Programmers][Graph][Lv2] 네트워크
+    [Programmers][DfsBfs][Lv2] 네트워크
 
     check) 단방향 네트워크
     1->2->3
