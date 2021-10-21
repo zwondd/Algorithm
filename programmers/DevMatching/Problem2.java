@@ -1,8 +1,8 @@
-import java.util.HashMap;
+package DevMatching;
 
 public class Problem2 {
     public int solution(int leave, String day, int[] holidays) {
-        int answer = -1, startSAT=-1, startSUN=-1;        
+        int startSAT=-1, startSUN=-1;        
 
         int[] dayOff = new int[30+1];
         String[] days = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN" };
@@ -38,7 +38,7 @@ public class Problem2 {
             if ( i%7==0 ) System.out.println();
         }
 
-        int[][] offCnt = new int[31][31];
+        // int[][] offCnt = new int[31][31];
 
         // dp
         // for(int i=2; i<=30; i++) {

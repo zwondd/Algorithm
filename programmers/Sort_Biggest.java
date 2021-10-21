@@ -22,7 +22,7 @@ class Sort_Biggest {
     }
     
     private String converToString(int[] nums) {
-        int maxN = nums[0];
+        // int maxN = nums[0];
         // int digit = (int)(Math.log10(maxN)+1);
 
         /*

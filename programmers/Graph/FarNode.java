@@ -69,7 +69,7 @@ public class FarNode {
                         }
                     }
                 }
-                System.out.println("["+i+"]["+j+"]" +graph[i][j] );
+                // System.out.println("["+i+"]["+j+"]" +graph[i][j] );
             }
         }
 

@@ -4,6 +4,7 @@
 */
 
 import java.util.HashMap;
+import java.util.Arrays;
 
 class HashPlayer {
     public String solution(String[] participant, String[] completion) {
