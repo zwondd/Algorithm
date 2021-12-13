@@ -1,7 +1,6 @@
 /*
     2021-08-31
     [Leetcode][Easy] 190. Reverse Bits
-
 */
 class ReverseBits {
     public int reverseBits(int n) {
