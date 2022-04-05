@@ -1,17 +1,82 @@
-import java.util.Arrays;
-
 /*
     2022-04-04
     [Leetcode][Hard] 480. Sliding Window Median
 */
+import java.util.*;
+
 class SlidingWindow {
     /*
-        broute force로 풀면
+        Heap을 통해 구현 (Priority Queue)
+        maxHeap, minHeap
+        https://www.youtube.com/watch?v=lXY2oiDlc1E
+
+        Runtime: 82 ms, faster than 55.91% of Java online submissions for Sliding Window Median.
+        Memory Usage: 56.3 MB, less than 23.51% of Java online submissions for Sliding Window Median.
+    */
+    Queue<Integer> minHeap;
+    Queue<Integer> maxHeap;
+
+    public SlidingWindow() {
+        minHeap = new PriorityQueue<>();
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // comparator
+    }
+
+    private void add(int num) {
+        if ( maxHeap.isEmpty() || maxHeap.peek()>num ) {
+            maxHeap.add(num);
+        } else {
+            minHeap.add(num);
+        }
+        balance();
+    }
+    private void balance() {
+        if(maxHeap.size()>minHeap.size()+1) {
+            minHeap.add(maxHeap.poll());
+        } else if( minHeap.size()>maxHeap.size() ) {
+            maxHeap.add(minHeap.poll());
+        }
+    }
+
+    private void remove(int num) {
+        if ( num<=maxHeap.peek() ) {
+            maxHeap.remove(num);
+        } else {
+            minHeap.remove(num);
+        }
+        balance();
+    }
+
+    private double findMedian() {
+        if( maxHeap.size() > minHeap.size() ) return maxHeap.peek();
+        if ( minHeap.size() > maxHeap.size() ) return minHeap.peek(); // 주석처리해도 상관없음. balance 시 항상 maxHeap 이 커지게 구성하고 있음.
+        return maxHeap.peek()/2.0 + minHeap.peek()/2.0;
+    }
+
+    public double[] medianSlidingWindow(int[] nums, int k) {
+        int start = 0;
+        double[] result = new double[nums.length-k+1];
+
+        for(int end=0; end<nums.length; end++) {
+            add(nums[end]);
+            int size = (end-start+1);
+            if ( size==k ) {
+                result[start] = findMedian();
+                remove(nums[start]);
+                start++;
+            }
+        }
+        return result;
+    }
+
+
+
+    /*
+        brute force로 풀면
         Time Limit Exceeded
 
         to be implemented ...
     */
-    public double[] medianSlidingWindow(int[] nums, int k) {
+    public double[] medianSlidingWindow1(int[] nums, int k) {
         double[] medArr = new double[nums.length-k+1];
 
         if ( nums.length==1 ) {
