@@ -1,6 +1,7 @@
+package DevMatching_202204;
 import java.util.*;
 
-public class Test_220402_1 {
+class Test_220402_1 {
     /*
         수직선 위에 놓인 점들 사이의 거리가 주어질 때, 각 점들이 어떤 순서로 놓여있는지 알아보려 합니다.
         다음은 점 5개가 주어질 때, 각 점 사이의 거리를 나타낸 행렬입니다.
