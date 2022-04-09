@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /*
     2022-04-08
-    [Programmers][Heap][Lv3] 정수 삼각형
+    [Programmers][DP][Lv3] 정수 삼각형
 */
 class Triangle {
     public int solution(int[][] triangle) {

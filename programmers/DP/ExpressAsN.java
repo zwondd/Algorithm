@@ -1,7 +1,7 @@
 package DP;
 /*
     2022-04-06
-    [Programmers][Heap][Lv3] N으로 표현
+    [Programmers][DP][Lv3] N으로 표현
 */
 
 import java.util.*;

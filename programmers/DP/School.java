@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /*
     2022-04-08
-    [Programmers][Heap][Lv3] 등굣길
+    [Programmers][DP][Lv3] 등굣길
 */
 class School {
     /*
